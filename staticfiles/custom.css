@@ -1,0 +1,30 @@
+.nav {
+    border-bottom: 1px solid #aaa;
+}
+
+.hero {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    font-size: 2rem;
+}
+
+.hero p {
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 2.5rem;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.post-body {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+

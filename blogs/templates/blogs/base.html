@@ -1,0 +1,50 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="{% static 'chota.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'custom.css' %}" rel="stylesheet" type="text/css">
+    
+    <title>BlogMaker Lite</title>
+  </head>
+
+  <body>
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="active" href="{% url 'blogs:index' %}">BlogMaker Lite</a>
+        <a href="{% url 'blogs:blogs' %}">All blogs</a>
+
+        {% if user.is_authenticated %}
+          <a href="{% url 'blogs:new_blog' %}">Create blog</a>
+        {% endif %}
+      </div>
+
+      <div class="nav-right">
+        {% if user.is_authenticated %}
+          <span class="is-vertical-align">
+            Hello, {{ user.username }}.</span>
+
+          <form action="{% url 'accounts:logout' %}" method="post"
+              class="is-vertical-align">
+            {% csrf_token %}
+            <button class="button outline">Log out</button>
+          </form>
+
+        {% else %}
+          <a href="{% url 'accounts:login' %}">Log in</a>
+          <a href="{% url 'accounts:register' %}">Register</a>
+        {% endif %}
+      </div>
+    </nav>
+
+    <div class="container">
+      {% block content %}{% endblock content %}
+    </div>
+    
+  </body>
+</html>
+
