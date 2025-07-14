@@ -1,4 +1,5 @@
 # bml_project
 <p>Mostly Python BML_Project Follow Along</p> 
-Testing Azure Deployment (Azure App Services)
-Testing GitHub Actions
+<p>Testing Azure Deployment (Azure App Services)</p>
+<p>Testing GitHub Actions</p>
+
